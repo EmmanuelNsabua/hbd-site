@@ -16,7 +16,7 @@ const bootLines = [
 ];
 
 const wishText =
-  "Happy Deploy Day. Que cette nouvelle version de ta vie shippe avec des idees nettes, des bugs minuscules, des merges heureux et assez de douceur pour recharger toutes les batteries. Aujourd'hui, la branche celebration passe en production.";
+  "Happy Deploy Day, Gael ! \nQue le script de ta nouvelle année de naissance s'exécute sans le moindre warning. On te souhaite un quotidien en Clean Architecture, des projets qui compilent du premier coup, et un niveau de batterie toujours au max. La pull request la plus importante de l'année vient d'être approuvée : place à la fête !";
 
 const stack = ["JS", "React", "Next", "Tailwind"];
 const checks = ["intro", "cake", "wish", "party"];
