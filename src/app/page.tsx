@@ -1,9 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useEffect, useMemo, useState } from "react";
-
-import dynamic from "next/dynamic";
+import { useEffect, useMemo, useState, useCallback } from "react";
 
 type CssVars = CSSProperties & Record<`--${string}`, string>;
 type AudioWindow = Window &
@@ -24,7 +22,7 @@ const stack = ["JS", "React", "Next", "Tailwind"];
 const checks = ["intro", "cake", "wish", "party"];
 const tokens = ["{}", "</>", "npm", "git", "PR", "++", "tsx", "ship"];
 
-function Home() {
+export default function Home() {
   const [bookOpen, setBookOpen] = useState(false);
   const [typedWish, setTypedWish] = useState("");
   const [partyKey, setPartyKey] = useState(0);
@@ -70,12 +68,12 @@ function Home() {
     // 1. Mets ton fichier (ex: mon-son.mp3) dans public/
     // 2. Décommente les deux lignes ci-dessous :
     // ---------------------------------------------------------
-    const customAudio = new Audio('/mon-son.mp3');
+    const customAudio = new Audio('/assets/mon-son.mp3');
     customAudio.play().catch(() => {});
     return;
 
     // Son "bip" généré par défaut :
-    const AudioContextClass = window.AudioContext || (window as AudioWindow).webkitAudioContext;
+    /*const AudioContextClass = window.AudioContext || (window as AudioWindow).webkitAudioContext;
     if (!AudioContextClass) return;
     const audio = new AudioContextClass();
     [523.25, 659.25, 783.99].forEach((frequency, index) => {
@@ -89,7 +87,7 @@ function Home() {
       osc.connect(gain).connect(audio.destination);
       osc.start(audio.currentTime + index * 0.1);
       osc.stop(audio.currentTime + index * 0.1 + 0.24);
-    });
+    });*/
   }
 
   function openCard() {
@@ -125,7 +123,7 @@ function Home() {
           <span className="grid size-9 place-items-center rounded-lg border border-emerald-300/35 bg-slate-950/60 text-emerald-300 shadow-[0_0_22px_rgba(45,255,169,0.22)]">
             {"{}"}
           </span>
-          <span className="hidden sm:inline">deploy-day.card</span>
+          <span className="hidden sm:inline">deploy_day.card</span>
         </div>
 
         <div className="flex min-w-0 items-center gap-2">
@@ -231,7 +229,7 @@ function Home() {
           <div className="relative flex-1 p-4 sm:p-6 flex items-center justify-center bg-slate-950/40 min-h-[300px]">
             <div className="relative w-full h-full max-h-[420px] aspect-[4/3] rounded-lg overflow-hidden border-2 border-white/10 shadow-2xl group">
               <img 
-                src="/img/IMG-20230707-WA0003~2.jpg.jpeg" 
+                src="/assets/IMG-20230707-WA0003~2.jpg.jpeg" 
                 alt="Aqsa Celebration" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -311,5 +309,3 @@ function Home() {
     </main>
   );
 }
-
-export default dynamic(() => Promise.resolve(Home), { ssr: false });
