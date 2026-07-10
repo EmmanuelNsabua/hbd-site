@@ -133,7 +133,10 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+}
+
+html {
+  zoom: 0.8;
 }
 
 button {

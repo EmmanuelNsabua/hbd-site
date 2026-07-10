@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Happy Deploy Day",
-  description: "Carte d'anniversaire interactive one-screen pour developpeur web.",
+  description: "Carte d'anniversaire interactive one-screen pour Gael.",
 };
 
 export default function RootLayout({

@@ -110,7 +110,7 @@ export default function Home() {
   return (
     <main
       className={[
-        "relative grid h-dvh w-full place-items-center overflow-hidden px-4 py-3 text-[#fff6d9]",
+        "relative flex min-h-dvh w-full flex-col items-center justify-center overflow-x-hidden overflow-y-auto px-4 py-8 text-[#fff6d9]",
         lightMode ? "deploy-scene deploy-scene-light" : "deploy-scene",
       ].join(" ")}
     >
@@ -123,7 +123,7 @@ export default function Home() {
           <span className="grid size-9 place-items-center rounded-lg border border-emerald-300/35 bg-slate-950/60 text-emerald-300 shadow-[0_0_22px_rgba(45,255,169,0.22)]">
             {"{}"}
           </span>
-          <span className="hidden sm:inline">deploy_day.card</span>
+          <span className="hidden sm:inline" translate="no">deploy_day.card</span>
         </div>
 
         <div className="flex min-w-0 items-center gap-2">
@@ -157,8 +157,8 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative z-10 grid h-[min(720px,calc(100dvh-92px))] w-full max-w-6xl grid-cols-1 items-center gap-4 pt-12 md:grid-cols-[1.02fr_0.98fr] md:pt-6">
-        <div className="intro-panel min-h-0 overflow-hidden rounded-lg border border-white/12 bg-[#151a31]/82 shadow-2xl backdrop-blur-xl">
+      <section className="relative z-10 grid h-auto min-h-[min(720px,calc(100dvh-92px))] w-full max-w-6xl grid-cols-1 items-center gap-4 pt-12 md:grid-cols-[1.02fr_0.98fr] md:pt-6">
+        <div className="intro-panel min-w-0 min-h-0 overflow-hidden rounded-lg border border-white/12 bg-[#151a31]/82 shadow-2xl backdrop-blur-xl">
           <div className="flex h-11 items-center gap-2 border-b border-white/10 bg-white/6 px-4">
             <span className="size-3 rounded-full bg-[#ff5c9a]" />
             <span className="size-3 rounded-full bg-[#ffe98a]" />
@@ -211,7 +211,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="stage-panel relative flex flex-col min-h-0 overflow-hidden rounded-lg border border-white/12 bg-[#151a31]/60 shadow-2xl backdrop-blur-xl lg:mr-8 w-full h-full">
+        <div className="stage-panel relative flex flex-col min-w-0 min-h-0 overflow-hidden rounded-lg border border-white/12 bg-[#151a31]/60 shadow-2xl backdrop-blur-xl lg:mr-8 w-full h-full">
           {/* Header style visionneuse d'images */}
           <div className="flex h-11 items-center justify-between border-b border-white/10 bg-white/6 px-4 shrink-0">
             <div className="flex items-center gap-2">
